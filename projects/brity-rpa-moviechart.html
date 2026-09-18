@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="김서율 Brity RPA 영화 예매순위 수집 자동화 프로젝트" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>MovieChart RPA | Kim Seoyul Portfolio</title>
+  <style>
+    :root{--bg:#0b0d12;--panel:#11141b;--panel2:#151924;--text:#f5f7fb;--muted:#9aa3b2;--line:rgba(255,255,255,.09);--accent:#a5b4fc;--accent2:#67e8f9;--max:1080px;--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.68;letter-spacing:-.02em}a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.08em}.brand span{color:var(--accent)}.back{font-size:.9rem;color:#c8cfdb}
+    header{padding:88px 0 72px}.eyebrow{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#cbd3df;font-size:.82rem;background:rgba(255,255,255,.03)}h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.93;letter-spacing:-.065em;margin:26px 0 24px;max-width:900px}.lead{max-width:780px;color:#b0b8c5;font-size:1.1rem}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.chip{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:#d9dee7;font-size:.82rem}
+    section{padding:72px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;margin-bottom:34px}.kicker{color:#7f8998;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding-top:8px}h2{font-size:clamp(2rem,4vw,3.7rem);line-height:1.08;letter-spacing:-.05em;margin:0}.desc{color:#aab2c0;margin:15px 0 0;max-width:760px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h3{margin:0 0 10px;font-size:1.05rem}.card p{margin:0;color:#a5aeba}.number{font-size:2.4rem;line-height:1;color:#dbe4ff;font-weight:800;margin-bottom:14px}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{min-height:145px;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}.step b{display:block;color:var(--accent);font-size:.8rem;margin-bottom:10px}.step span{color:#c5ccd7;font-size:.92rem}
+    .fields{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.field{padding:16px 10px;text-align:center;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);font-size:.88rem;color:#dce1e9}
+    .media{padding:20px;border:1px solid var(--line);border-radius:22px;background:var(--panel)}video{display:block;width:100%;border-radius:15px;background:#050608;aspect-ratio:16/9}.media-note{margin:14px 2px 0;color:#9099a8;font-size:.88rem}
+    .notice{padding:22px 24px;border-left:3px solid var(--accent);background:rgba(165,180,252,.055);border-radius:4px 16px 16px 4px;color:#cbd2dd}.notice strong{color:#fff}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:13px;border:1px solid var(--line);background:#fff;color:#0b0d12;font-weight:750}.btn.secondary{background:rgba(255,255,255,.04);color:#fff}
+    footer{padding:34px 0 50px;color:#717b8b;font-size:.85rem}
+    @media(max-width:800px){.section-head{grid-template-columns:1fr;gap:9px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.fields{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.flow{grid-template-columns:1fr}.fields{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap nav"><a class="brand" href="../index.html">SEOYUL<span>.</span></a><a class="back" href="../index.html#work">← Portfolio</a></div></nav>
+  <header><div class="wrap"><span class="eyebrow">Brity RPA · Midterm Project</span><h1>영화 예매순위<br>수집 자동화</h1><p class="lead">무비차트 예매순위에 등록된 영화의 상세 정보를 반복 수집하고, 지정된 Excel 양식과 파일 규칙에 맞춰 결과 파일을 자동 생성하는 RPA 프로젝트입니다.</p><div class="chips"><span class="chip">Brity RPA</span><span class="chip">Chrome Automation</span><span class="chip">XPath</span><span class="chip">Web Data Extraction</span><span class="chip">Excel Automation</span><span class="chip">Loop / Condition</span></div></div></header>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">01 / Overview</div><div><h2>과제 요구사항을 자동화 흐름으로 구현</h2><p class="desc">프로젝트명과 저장 경로, 결과 파일명 규칙을 준수하면서 예매순위 1~20위 영화의 정보를 수집해 결과 Excel을 생성하도록 구성했습니다.</p></div></div><div class="grid"><article class="card"><div class="number">20</div><h3>수집 대상</h3><p>예매순위 1위부터 20위까지의 영화 정보를 반복 처리</p></article><article class="card"><div class="number">7</div><h3>수집 항목</h3><p>순위, 예매율, 제목, 장르, 감독, 주연, 시놉시스</p></article><article class="card"><h3>프로젝트 / 프로세스</h3><p>MovieChart_김서율 / P_MovieChart_김서율</p></article><article class="card"><h3>결과 저장 규칙</h3><p>yyyyMM 폴더에 yyMMdd_이름_MovieChart.xlsx 형식으로 저장</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">02 / Data</div><div><h2>수집 데이터</h2><p class="desc">영화 상세 페이지에서 필요한 항목을 추출하고 Excel의 열 구조에 맞춰 입력합니다.</p></div></div><div class="fields"><div class="field">순위</div><div class="field">예매율</div><div class="field">제목</div><div class="field">장르</div><div class="field">감독</div><div class="field">주연</div><div class="field">시놉시스</div></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">03 / Workflow</div><div><h2>자동화 흐름</h2></div></div><div class="flow"><div class="step"><b>STEP 01</b><span>작업 폴더 및 Excel 양식 준비</span></div><div class="step"><b>STEP 02</b><span>무비차트 홈페이지 접속</span></div><div class="step"><b>STEP 03</b><span>예매순위 페이지 이동</span></div><div class="step"><b>STEP 04</b><span>영화 상세 페이지 진입</span></div><div class="step"><b>STEP 05</b><span>영화 정보 추출 및 변수 가공</span></div><div class="step"><b>STEP 06</b><span>Excel 양식에 데이터 입력</span></div><div class="step"><b>STEP 07</b><span>예매순위로 복귀 후 다음 영화 반복</span></div><div class="step"><b>STEP 08</b><span>결과 폴더에 최종 파일 저장</span></div></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">04 / Implementation</div><div><h2>구현 포인트</h2></div></div><div class="grid"><article class="card"><h3>웹 객체 제어</h3><p>ChromeClick, ChromeNavigate, ChromeGetData 등을 활용해 예매순위와 상세 페이지 사이의 이동 및 데이터 수집 흐름을 구성했습니다.</p></article><article class="card"><h3>반복 / 조건 처리</h3><p>영화별 추출 결과를 변수로 분리하고, 출연 정보 등 데이터 구조 차이를 조건 분기로 처리했습니다.</p></article><article class="card"><h3>Excel 자동 기록</h3><p>수집한 값을 지정된 열 구조에 맞춰 입력하고 결과 파일명 및 날짜 폴더 규칙에 맞춰 저장하도록 구성했습니다.</p></article><article class="card"><h3>실행 오류 대응</h3><p>페이지 로딩 시간과 웹 객체 인식 문제를 점검하며 자동화가 끝까지 실행되도록 테스트 및 수정했습니다.</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">05 / Demo</div><div><h2>실행 영상</h2><p class="desc">포트폴리오용 데모에서는 전체 흐름을 빠르게 확인할 수 있도록 반복 수집 건수를 임시로 축소했습니다.</p></div></div><div class="notice"><strong>실제 과제 기준은 영화 20건입니다.</strong> 시연 영상에서는 자동화의 동작 흐름을 짧게 보여주기 위해 수집 건수를 3건으로 임시 조정했습니다.</div><div class="media" style="margin-top:20px"><video controls preload="metadata"><source src="../assets/brity-rpa/demo.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video><p class="media-note">데모: 프로세스 실행 → 웹 데이터 수집 → 반복 처리 → Excel 결과 확인</p></div><div class="buttons"><a class="btn secondary" href="../assets/brity-rpa/assignment-brief.pdf" target="_blank">작업지시서 보기 ↗</a><a class="btn" href="../index.html#work">포트폴리오로 돌아가기</a></div></div></section>
+
+  <footer><div class="wrap">© <span id="year"></span> Kim Seoyul · PM / PMO · QA Portfolio</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
