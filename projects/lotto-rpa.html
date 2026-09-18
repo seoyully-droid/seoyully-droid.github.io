@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="김서율 Brity RPA 로또 당첨번호 통계 자동화 프로젝트" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Lotto RPA | Kim Seoyul Portfolio</title>
+  <style>
+    :root{--bg:#0b0d12;--panel:#11141b;--panel2:#151924;--text:#f5f7fb;--muted:#9aa3b2;--line:rgba(255,255,255,.09);--accent:#a5b4fc;--accent2:#67e8f9;--max:1080px;--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.68;letter-spacing:-.02em}a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.08em}.brand span{color:var(--accent)}.back{font-size:.9rem;color:#c8cfdb}
+    header{padding:88px 0 72px}.eyebrow{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#cbd3df;font-size:.82rem;background:rgba(255,255,255,.03)}h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.93;letter-spacing:-.065em;margin:26px 0 24px;max-width:900px}.lead{max-width:780px;color:#b0b8c5;font-size:1.1rem}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.chip{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:#d9dee7;font-size:.82rem}
+    section{padding:72px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;margin-bottom:34px}.kicker{color:#7f8998;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding-top:8px}h2{font-size:clamp(2rem,4vw,3.7rem);line-height:1.08;letter-spacing:-.05em;margin:0}.desc{color:#aab2c0;margin:15px 0 0;max-width:760px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h3{margin:0 0 10px;font-size:1.05rem}.card p{margin:0;color:#a5aeba}.number{font-size:2.4rem;line-height:1;color:#dbe4ff;font-weight:800;margin-bottom:14px}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{min-height:145px;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}.step b{display:block;color:var(--accent);font-size:.8rem;margin-bottom:10px}.step span{color:#c5ccd7;font-size:.92rem}
+    .fields{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.field{padding:16px 10px;text-align:center;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);font-size:.88rem;color:#dce1e9}
+    .media{padding:20px;border:1px solid var(--line);border-radius:22px;background:var(--panel)}video{display:block;width:100%;border-radius:15px;background:#050608;aspect-ratio:16/9}.media-note{margin:14px 2px 0;color:#9099a8;font-size:.88rem}
+    .notice{padding:22px 24px;border-left:3px solid var(--accent);background:rgba(165,180,252,.055);border-radius:4px 16px 16px 4px;color:#cbd2dd}.notice strong{color:#fff}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:13px;border:1px solid var(--line);background:#fff;color:#0b0d12;font-weight:750}.btn.secondary{background:rgba(255,255,255,.04);color:#fff}
+    footer{padding:34px 0 50px;color:#717b8b;font-size:.85rem}
+    @media(max-width:800px){.section-head{grid-template-columns:1fr;gap:9px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.fields{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.flow{grid-template-columns:1fr}.fields{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap nav"><a class="brand" href="../index.html">SEOYUL<span>.</span></a><a class="back" href="../index.html#work">← Portfolio</a></div></nav>
+  <header><div class="wrap"><span class="eyebrow">Brity RPA · Automation Project</span><h1>로또 당첨번호<br>통계 자동화</h1><p class="lead">동행복권 로또 6/45의 최신 10개 회차 당첨결과를 자동 수집하고, Excel에 회차별 데이터를 기록한 뒤 1~45 번호별 출현 횟수를 자동 집계해 결과 파일로 저장하는 RPA 프로젝트입니다.</p><div class="chips"><span class="chip">Brity RPA</span><span class="chip">Chrome Automation</span><span class="chip">Dropdown Control</span><span class="chip">Excel Automation</span><span class="chip">COUNTIF</span><span class="chip">Loop / Condition</span></div></div></header>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">01 / Overview</div><div><h2>최신 10개 회차 수집부터 번호 통계까지 자동화</h2><p class="desc">지정된 프로젝트명·폴더·파일명 규칙에 맞춰 최신 10개 회차의 당첨번호를 수집하고, Excel에서 1~45 번호별 출현 횟수를 계산하도록 구성했습니다.</p></div></div><div class="grid"><article class="card"><div class="number">10</div><h3>수집 회차</h3><p>조회일 기준 최신 회차부터 총 10개 회차를 반복 처리</p></article><article class="card"><div class="number">45</div><h3>통계 대상 번호</h3><p>1번부터 45번까지 각 번호의 출현 횟수를 집계</p></article><article class="card"><h3>프로젝트 / 프로세스</h3><p>Lotto_김서율 / P_Lotto_김서율</p></article><article class="card"><h3>결과 저장 규칙</h3><p>yyyyMM 폴더에 yyMMdd_이름_Lotto.xlsx 형식으로 저장</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">02 / Data</div><div><h2>수집 및 분석 데이터</h2><p class="desc">회차별 당첨결과를 Excel에 누적하고, 상단 통계 영역에서 1~45 번호별 출현 횟수를 계산합니다.</p></div></div><div class="fields"><div class="field">회차</div><div class="field">당첨번호 1~6</div><div class="field">보너스 번호</div><div class="field">1~45 통계 헤더</div><div class="field">출현 횟수</div><div class="field">결과 파일</div></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">03 / Workflow</div><div><h2>자동화 흐름</h2></div></div><div class="flow"><div class="step"><b>STEP 01</b><span>작업 폴더 생성 및 동행복권 접속</span></div><div class="step"><b>STEP 02</b><span>추첨결과 페이지 이동</span></div><div class="step"><b>STEP 03</b><span>회차 드롭다운 선택 및 당첨결과 추출</span></div><div class="step"><b>STEP 04</b><span>Excel에 회차별 데이터 입력</span></div><div class="step"><b>STEP 05</b><span>10개 회차 반복 처리</span></div><div class="step"><b>STEP 06</b><span>1~45 통계 헤더 생성</span></div><div class="step"><b>STEP 07</b><span>COUNTIF 기반 번호별 출현 횟수 계산</span></div><div class="step"><b>STEP 08</b><span>결과 파일 날짜 규칙에 맞춰 저장</span></div><div class="step"><b>STEP 09</b><span>결과 Excel 확인</span></div><div class="step"><b>STEP 10</b><span>자동화 종료</span></div></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">04 / Implementation</div><div><h2>구현 포인트</h2></div></div><div class="grid"><article class="card"><h3>회차 드롭다운 제어</h3><p>회차 바로가기의 드롭다운을 제어해 최신 회차부터 순차적으로 10개 회차를 조회하도록 구성했습니다.</p></article><article class="card"><h3>당첨번호 배열 처리</h3><p>추출한 당첨번호에 회차 정보를 결합하고, 반복 처리 과정에서 Excel 입력 구조에 맞게 데이터를 구성했습니다.</p></article><article class="card"><h3>Excel 자동 기록</h3><p>B4부터 회차별 당첨결과를 행 단위로 입력하고, 전체 정렬·테두리 등 결과 형식도 자동 적용하도록 구성했습니다.</p></article><article class="card"><h3>번호별 통계 계산</h3><p>1~45 통계 헤더를 만든 뒤 WriteCellFormula와 COUNTIF 수식을 활용해 번호별 출현 횟수를 계산했습니다.</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">05 / Demo</div><div><h2>실행 영상 & 요구사항 요약</h2><p class="desc">자동화 프로세스 실행부터 회차별 데이터 수집, Excel 기록, 번호 통계 결과까지 확인할 수 있습니다.</p></div></div><div class="media"><video controls preload="metadata"><source src="../assets/lotto-rpa/demo.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video><p class="media-note">데모: 프로세스 실행 → 회차 선택 → 당첨번호 수집 → Excel 기록 → 번호별 통계 결과 확인</p></div><div class="buttons"><a class="btn secondary" href="../assets/lotto-rpa/requirements-summary.pdf" target="_blank">요구사항 요약 PDF ↗</a><a class="btn" href="../index.html#work">포트폴리오로 돌아가기</a></div></div></section>
+
+  <footer><div class="wrap">© <span id="year"></span> Kim Seoyul · PM / PMO · QA Portfolio</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
