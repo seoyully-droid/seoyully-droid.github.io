@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="김서율 Brity RPA AI 이미지 분석·생성 자동화 프로젝트" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>AI Image RPA | Kim Seoyul Portfolio</title>
+  <style>
+    :root{--bg:#0b0d12;--panel:#11141b;--panel2:#151924;--text:#f5f7fb;--muted:#9aa3b2;--line:rgba(255,255,255,.09);--accent:#a5b4fc;--accent2:#67e8f9;--max:1080px;--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.68;letter-spacing:-.02em}a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.08em}.brand span{color:var(--accent)}.back{font-size:.9rem;color:#c8cfdb}
+    header{padding:88px 0 72px}.eyebrow{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#cbd3df;font-size:.82rem;background:rgba(255,255,255,.03)}h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.94;letter-spacing:-.065em;margin:26px 0 24px;max-width:940px}.lead{max-width:800px;color:#b0b8c5;font-size:1.1rem}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.chip{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:#d9dee7;font-size:.82rem}
+    section{padding:72px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;margin-bottom:34px}.kicker{color:#7f8998;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding-top:8px}h2{font-size:clamp(2rem,4vw,3.7rem);line-height:1.08;letter-spacing:-.05em;margin:0}.desc{color:#aab2c0;margin:15px 0 0;max-width:780px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h3{margin:0 0 10px;font-size:1.05rem}.card p{margin:0;color:#a5aeba}.number{font-size:2.4rem;line-height:1;color:#dbe4ff;font-weight:800;margin-bottom:14px}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{min-height:150px;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}.step b{display:block;color:var(--accent);font-size:.8rem;margin-bottom:10px}.step span{color:#c5ccd7;font-size:.92rem}
+    .media{padding:20px;border:1px solid var(--line);border-radius:22px;background:var(--panel)}video{display:block;width:100%;border-radius:15px;background:#050608;aspect-ratio:16/9}.media-note{margin:14px 2px 0;color:#9099a8;font-size:.88rem}
+    .notice{padding:22px 24px;border-left:3px solid var(--accent);background:rgba(165,180,252,.055);border-radius:4px 16px 16px 4px;color:#cbd2dd}.notice strong{color:#fff}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:13px;border:1px solid var(--line);background:#fff;color:#0b0d12;font-weight:750}.btn.secondary{background:rgba(255,255,255,.04);color:#fff}
+    footer{padding:34px 0 50px;color:#717b8b;font-size:.85rem}
+    @media(max-width:800px){.section-head{grid-template-columns:1fr;gap:9px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap nav"><a class="brand" href="../index.html">SEOYUL<span>.</span></a><a class="back" href="../index.html#work">← Portfolio</a></div></nav>
+  <header><div class="wrap"><span class="eyebrow">Brity RPA · AI Automation Project</span><h1>AI 이미지 분석·생성<br>및 결과 전송 자동화</h1><p class="lead">이미지 파일을 AI로 분석하고 결과에 따라 분류한 뒤, 분석 결과를 기반으로 새 이미지를 생성·저장하고 전체 작업 결과를 이메일로 전송하는 Brity RPA 자동화 프로젝트입니다.</p><div class="chips"><span class="chip">Brity RPA</span><span class="chip">OpenAI API</span><span class="chip">Image Analysis</span><span class="chip">Image Generation</span><span class="chip">File Classification</span><span class="chip">Email Automation</span><span class="chip">Exception Handling</span></div></div></header>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">01 / Overview</div><div><h2>AI 분석부터 생성·저장·메일 전송까지 하나의 흐름으로</h2><p class="desc">작업 폴더를 준비하고 이미지별 분석을 반복 수행한 뒤 결과를 가공해 이미지 생성 요청으로 연결합니다. 생성된 파일을 분류·저장하고 최종 결과를 이메일로 전달하도록 구성했습니다.</p></div></div><div class="grid"><article class="card"><h3>입력 / 출력 폴더 관리</h3><p>Input, Output, Temp 작업 폴더를 구분해 원본 이미지와 처리 결과를 체계적으로 관리했습니다.</p></article><article class="card"><h3>이미지 분석 반복 처리</h3><p>이미지 파일 개수만큼 분석 요청과 결과 처리를 반복하도록 자동화 흐름을 구성했습니다.</p></article><article class="card"><h3>AI 이미지 생성</h3><p>분석 결과를 기반으로 생성 프롬프트를 구성하고 API를 통해 새 이미지를 생성하도록 연결했습니다.</p></article><article class="card"><h3>결과 메일 전송</h3><p>분석·생성·분류 작업이 완료되면 최종 결과를 지정된 수신자에게 이메일로 전송하도록 구성했습니다.</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">02 / Workflow</div><div><h2>자동화 흐름</h2></div></div><div class="flow"><div class="step"><b>STEP 01</b><span>분석 대상 이미지 및 작업 폴더 준비</span></div><div class="step"><b>STEP 02</b><span>이미지 업로드 및 AI 분석 요청</span></div><div class="step"><b>STEP 03</b><span>분석 결과 확인 및 이미지 분류</span></div><div class="step"><b>STEP 04</b><span>분석 결과 기반 이미지 생성 요청</span></div><div class="step"><b>STEP 05</b><span>생성 이미지 저장 및 분류</span></div><div class="step"><b>STEP 06</b><span>이미지 수만큼 반복 처리</span></div><div class="step"><b>STEP 07</b><span>예외 결과 재요청 및 제외 처리</span></div><div class="step"><b>STEP 08</b><span>전체 결과 이메일 전송</span></div></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">03 / Implementation</div><div><h2>구현 포인트</h2></div></div><div class="grid"><article class="card"><h3>Task 단위 모듈화</h3><p>폴더 정리, 데이터 읽기, 이미지 분석, 분류, 이미지 생성, 메일 전송 등 업무 성격별로 Task를 분리해 구성했습니다.</p></article><article class="card"><h3>변수 범위 구분</h3><p>프로세스 전체에서 사용하는 값은 Global 변수로 관리하고, Task별 전달 값은 Input / Output 변수로 구분했습니다.</p></article><article class="card"><h3>예외 처리</h3><p>분석 결과가 의도한 기준과 다르면 1회 재요청하고, 재요청 후에도 기준과 다를 경우 해당 작업에서 제외하도록 처리했습니다.</p></article><article class="card"><h3>API 응답 파싱</h3><p>AI 분석·생성 API의 JSON 응답을 파싱해 분석 결과와 생성 이미지 데이터를 후속 Task에서 사용할 수 있도록 연결했습니다.</p></article></div></div></section>
+
+  <section><div class="wrap"><div class="section-head"><div class="kicker">04 / Demo</div><div><h2>실행 영상</h2><p class="desc">AI 이미지 분석 결과, 이미지 생성·저장, 결과 확인 및 이메일 전송 흐름을 포트폴리오용으로 편집한 데모입니다.</p></div></div><div class="notice"><strong>데모 안내</strong> 정상 실행 시점의 결과 화면들을 기준으로 포트폴리오용으로 재구성한 영상입니다.</div><div class="media" style="margin-top:20px"><video controls preload="metadata"><source src="../assets/ai-image-rpa/demo.mp4" type="video/mp4">브라우저가 동영상을 지원하지 않습니다.</video><p class="media-note">데모: 이미지 분석 → 결과 분류 → 이미지 생성·저장 → 결과 확인 → 이메일 전송</p></div><div class="buttons"><a class="btn" href="../index.html#work">포트폴리오로 돌아가기</a></div></div></section>
+
+  <footer><div class="wrap">© <span id="year"></span> Kim Seoyul · PM / PMO · QA Portfolio</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
