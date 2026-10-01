@@ -14,10 +14,10 @@
     section{padding:72px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;margin-bottom:34px}.kicker{color:#7f8998;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;padding-top:8px}h2{font-size:clamp(1.8rem,3.3vw,3rem);line-height:1.08;letter-spacing:-.045em;margin:0}.desc{color:#aab2c0;margin:15px 0 0;max-width:780px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h3{margin:0 0 12px;font-size:1.08rem}.card ul{margin:0;padding-left:19px;color:#aab2c0}.card li{margin:6px 0}.role{border-left:3px solid var(--accent)}
     .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);min-height:138px}.step b{display:block;color:var(--accent);font-size:.8rem;margin-bottom:9px}.step span{color:#c5ccd7;font-size:.9rem}
-    .metric{font-size:2rem;font-weight:800;line-height:1;margin-bottom:10px;color:#e4e8ff}.note{padding:22px 24px;border-left:3px solid var(--accent);background:rgba(165,180,252,.055);border-radius:4px 16px 16px 4px;color:#cbd2dd}
+    .metric{font-size:2rem;font-weight:800;line-height:1;margin-bottom:10px;color:#e4e8ff}.note{padding:22px 24px;border-left:3px solid var(--accent);background:rgba(165,180,252,.055);border-radius:4px 16px 16px 4px;color:#cbd2dd}.screen{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}.screen img{display:block;width:100%;height:auto}.screen figcaption{padding:14px 16px;background:#11141b;color:#aab2c0;font-size:.9rem}.visual-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:start}.compact{padding:22px}.compact h3{margin-bottom:8px}.compact ul{margin-top:0}
     .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:13px;border:1px solid var(--line);background:#fff;color:#0b0d12;font-weight:750}
     footer{padding:34px 0 50px;color:#717b8b;font-size:.85rem}
-    @media(max-width:850px){.section-head{grid-template-columns:1fr;gap:9px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}}@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.flow{grid-template-columns:1fr}}
+    @media(max-width:850px){.section-head{grid-template-columns:1fr;gap:9px}.grid,.visual-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.one-line{white-space:normal!important}}@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.flow{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -31,7 +31,7 @@
   </div></header>
 
   <section><div class="wrap">
-    <div class="section-head"><div class="kicker">01 / Project</div><div><h2 style="white-space:nowrap">점검 업무를 하나의 서비스 흐름으로 연결</h2><p class="desc">가입 승인 → 시설·장비 등록 → 점검 일정 생성 → 현장 결과 등록 → 사진 검수·재점검 → 월간 보고서 작성까지 하나의 흐름으로 구성.</p></div></div>
+    <div class="section-head"><div class="kicker">01 / Project</div><div><h2 class="one-line" style="white-space:nowrap">점검 업무를 하나의 서비스 흐름으로 연결</h2><p class="desc">회원가입부터 현장 점검, 검수, 월간 보고서까지 연결한 통합 서비스.</p></div></div>
     <div class="flow">
       <div class="step"><b>01</b><span>회원가입·승인</span></div>
       <div class="step"><b>02</b><span>시설·장비 등록</span></div>
@@ -43,15 +43,18 @@
   </div></section>
 
   <section><div class="wrap">
-    <div class="section-head"><div class="kicker">02 / My Role</div><div><h2>담당 범위</h2><p class="desc">팀 전체 기능과 개인 담당 영역을 구분해 정리.</p></div></div>
-    <div class="grid">
-      <article class="card role"><h3>OutSystems · 회원가입 / 인사 관리</h3><ul><li>프로필 사진·기본정보 입력 화면 구성</li><li>이메일 중복·휴대폰 형식·비밀번호 조건 검증</li><li>가입 후 승인 대기 프로세스 구성</li><li>본인 프로필 조회·수정</li><li>직원 정보 조회 및 조건 검색</li><li>부서·역할 지정 및 승인·거절 처리</li><li>HR_Manager / Root 기준 화면 접근 제어</li></ul></article>
-      <article class="card role"><h3>Brity RPA · 인사 보고 자동화</h3><ul><li>부서 선택 기반 로그인 자동화</li><li>직원정보 화면 데이터 수집·Excel 저장</li><li>부서·역할 정보 수집·Excel 저장</li><li>반복 입력 및 서식 적용</li><li>작성일자 기반 파일명으로 결과 저장</li></ul></article>
+    <div class="section-head"><div class="kicker">02 / My Role</div><div><h2>담당 범위</h2><p class="desc">회원가입·인사 관리 화면과 Brity RPA 인사 보고 자동화 담당.</p></div></div>
+    <div class="visual-grid">
+      <figure class="screen"><img src="../assets/hotel-safety/signup.jpg" alt="호텔 안전점검 시스템 회원가입 화면"><figcaption>OutSystems 회원가입 화면 · 입력값 검증 및 가입 승인 대기 흐름 구성</figcaption></figure>
+      <div class="grid" style="grid-template-columns:1fr">
+        <article class="card role compact"><h3>OutSystems</h3><ul><li>회원가입·프로필 관리</li><li>입력값 검증</li><li>직원 조회·검색</li><li>부서·역할 지정</li><li>승인·거절 및 접근 제어</li></ul></article>
+        <article class="card role compact"><h3>Brity RPA</h3><ul><li>부서별 로그인 자동화</li><li>직원정보 수집</li><li>부서·역할 정보 수집</li><li>Excel 보고서 자동 생성</li></ul></article>
+      </div>
     </div>
   </div></section>
 
   <section><div class="wrap">
-    <div class="section-head"><div class="kicker">03 / OutSystems</div><div><h2>회원가입 · 승인 · 권한 관리</h2></div></div>
+    <div class="section-head"><div class="kicker">03 / OutSystems</div><div><h2>회원가입 · 승인 · 권한 관리</h2><p class="desc">화면 설명보다 실제 구현 기능 중심으로 정리.</p></div></div>
     <div class="grid">
       <article class="card"><h3>가입 단계 검증</h3><ul><li>이미 사용 중인 이메일 차단</li><li>휴대폰 번호 형식 검증</li><li>비밀번호 8자 이상 조건</li><li>비밀번호 확인 일치 여부 검증</li></ul></article>
       <article class="card"><h3>승인 프로세스</h3><ul><li>가입 완료 후 승인 대기</li><li>인사팀의 부서·역할 지정</li><li>승인 / 거절 처리</li><li>승인 전 로그인 접근 차단</li></ul></article>
